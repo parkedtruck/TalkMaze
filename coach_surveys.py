@@ -3,8 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-colns = list(range(2, 3)) + list(range(4, 16))
-data = pd.read_csv(sys.argv[2], usecols=colns)
+data = pd.read_csv(sys.argv[2], usecols=list(range(2, 3)) + list(range(4, 16)))
 
 x = data.loc[data['What is your coach\'s name?'] == sys.argv[1]]
 
