@@ -3,12 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-coach = sys.argv[1]
-
 colns = list(range(2, 3)) + list(range(4, 16))
 data = pd.read_csv(sys.argv[2], usecols=colns)
 
-x = data.loc[data['What is your coach\'s name?'] == coach]
+x = data.loc[data['What is your coach\'s name?'] == sys.argv[1]]
 
 num_values = len(x.columns)*len(x)
 dict_copy = x.to_dict()
