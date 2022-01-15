@@ -29,7 +29,7 @@ num_values = len(x.columns)*len(x)
 dict_copy = x.to_dict()
 
 score = SA = A = N = D = SD = 0
-scores = {"Strongly Agree": 4, "Agree": 3, "Neutral": 2, "Disagree": 1, "Strongly Disagree": 0}
+scores = {"Strongly Agree": 5, "Agree": 4, "Neutral": 3, "Disagree": 2, "Strongly Disagree": 1}
 
 for r in dict_copy:
     if r == 'What is your coach\'s name?':
