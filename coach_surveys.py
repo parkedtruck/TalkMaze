@@ -7,7 +7,7 @@ if len(sys.argv) != 3:
     print("ERROR: Too many arguments passed to script.\n"
           "Please call this script followed by the coach name and the csv file path.\n"
           "Here is an example call:\n"
-          "python3 coach_surveys.py \"Jonathan Stanhope\" ./survey_responses.csv")
+          "python3 coach_surveys.py \"Jonathan Stanley\" ./survey_responses.csv")
     sys.exit(0)
 
 try:
@@ -20,7 +20,7 @@ except FileNotFoundError as err:
           "python3 coach_surveys.py \"Jonathan Stanhope\" /Users/bob/Documents/TalkMaze/survey_data.csv")
     sys.exit(0)
 except pd.errors.EmptyDataError:
-    print(sys.argv[2], "was empty. Please check your csv and make sure it contains data.")
+    print(sys.argv[2], "was empty. Please check your csv and make sure it contains data.\n")
     sys.exit(0)
 
 x = data.loc[data['What is your coach\'s name?'] == sys.argv[1]]
@@ -39,7 +39,10 @@ for r in dict_copy:
         key_arr = list(new_dict.keys())
         if len(key_arr) == 0:
             print("ERROR: Coach not found.\n"
-                  "Please check for typos in the coach's name provided and review your data.")
+                  "Please check for typos in the coach's name provided and review your data.\n"
+                  "Also make sure the coach name is in quotes.\n"
+                  "Here is an example call:\n"
+                  "python3 coach_surveys.py \"Jonathan Stanley\" survey_responses.csv")
             sys.exit(0)
 
         for i in range(key_arr[0], key_arr[-1]+1):
