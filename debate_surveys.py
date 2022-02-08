@@ -29,7 +29,7 @@ num_values = len(x.columns)*len(x)
 dict_copy = x.to_dict()
 
 score = SA = A = N = D = SD = 0
-scores = {"Strongly Agree": 5, "Agree": 4, "Neutral": 3, "Disagree": 2, "Strongly Disagree": 1}
+scores = {"strongly agree": 5, "agree": 4, "neutral": 3, "disagree": 2, "strongly disagree": 1}
 
 for r in dict_copy:
     if r == 'What is your coach\'s name?':
@@ -47,16 +47,16 @@ for r in dict_copy:
             sys.exit(0)
 
         for i in range(key_arr[0], key_arr[-1]+1):
-            value = new_dict.get(i)
+            value = new_dict.get(i).lower()
             if value == None:
                 continue
-            elif value == "Strongly Agree":
+            elif value == "strongly agree":
                 SA += 1
-            elif value == "Agree":
+            elif value == "agree":
                 A += 1
-            elif value == "Neutral":
+            elif value == "neutral":
                 N += 1
-            elif value == "Disagree":
+            elif value == "disagree":
                 D += 1
             else:
                 SD += 1
@@ -99,16 +99,16 @@ for r in dict_copy2:
             sys.exit(0)
 
         for i in range(key_arr[0], key_arr[-1]+1):
-            value = new_dict.get(i)
+            value = new_dict.get(i).lower()
             if value == None:
                 continue
-            elif value == "Strongly Agree":
+            elif value == "strongly agree":
                 SA2 += 1
-            elif value == "Agree":
+            elif value == "agree":
                 A2 += 1
-            elif value == "Neutral":
+            elif value == "neutral":
                 N2 += 1
-            elif value == "Disagree":
+            elif value == "disagree":
                 D2 += 1
             else:
                 SD2 += 1
