@@ -8,8 +8,7 @@ if len(sys.argv) != 4:
         "ERROR: Wrong number of arguments passed to script.\n"
         "Please call this script followed by the coach name, the old csv file path, and the new csv file path.\n"
         "Here is an example call:\n"
-        'python3 coach_surveys.py "Jonathan Stanley" old_survey_responses.csv new_survey_responses.csv'
-    )
+        'python3 coach_surveys.py "Jonathan Stanley" old_survey_responses.csv new_survey_responses.csv')
     sys.exit(0)
 
 try:
@@ -21,7 +20,7 @@ except FileNotFoundError as err:
         "does not exist in the directory indicated by the path you provided.\n"
         "Please check for typos. If there are none, please copy the csv file's pathname from\n"
         "the root and pass it as your csv argument:\n"
-        'python3 coach_surveys.py "Jonathan Stanhope" /Users/bob/Documents/TalkMaze/survey_data.csv',
+        'python3 coach_surveys.py "Jonathan Stanhope" /Users/bob/Documents/TalkMaze/old_data.csv new_data.csv',
     )
     sys.exit(0)
 except pd.errors.EmptyDataError:
@@ -59,7 +58,7 @@ for r in dict_copy:
                 "Please check for typos in the coach's name provided and review your data.\n"
                 "Also make sure the coach name is in quotes.\n"
                 "Here is an example call:\n"
-                'python3 coach_surveys.py "Jonathan Stanley" survey_responses.csv'
+                'python3 coach_surveys.py "Jonathan Stanley" old_responses.csv new_responses.csv'
             )
             sys.exit(0)
 
@@ -91,7 +90,7 @@ except FileNotFoundError as err:
         "does not exist in the directory indicated by the path you provided.\n"
         "Please check for typos. If there are none, please copy the csv file's pathname from\n"
         "the root and pass it as your csv argument:\n"
-        'python3 coach_surveys.py "Jonathan Stanhope" /Users/bob/Documents/TalkMaze/survey_data.csv',
+        'python3 coach_surveys.py "Jonathan Stanhope" /Users/bob/Documents/TalkMaze/old_data.csv /Users/bob/Documents/TalkMaze/new_data.csv',
     )
     sys.exit(0)
 except pd.errors.EmptyDataError:
@@ -121,7 +120,7 @@ for r in dict_copy2:
                 "Please check for typos in the coach's name provided and review your data.\n"
                 "Also make sure the coach name is in quotes.\n"
                 "Here is an example call:\n"
-                'python3 coach_surveys.py "Jonathan Stanley" survey_responses.csv'
+                'python3 coach_surveys.py "Jonathan Stanley" old_responses.csv new_responses.csv'
             )
             sys.exit(0)
 
@@ -140,7 +139,6 @@ for r in dict_copy2:
             else:
                 SD2 += 1
             score2 += scores.get(value)
-
 
 
 score_arr = np.array([SA, A, N, D, SD])
